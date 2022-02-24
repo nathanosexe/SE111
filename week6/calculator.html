@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body id="body">
+    <button>click</button>
+    <span> </span>
+    <script>
+        var myButton = document.querySelector('button')
+        myButton.addEventListener('click', dataPrompt)
+
+        function dataPrompt() {
+            var hourlypay = prompt('Enter your hourly pay', 'Hourly Pay')
+            var hoursworked = prompt('Enter your hours worked', 'Hours Worked')
+            var taxrate = prompt('Enter the tax rate', 'Tax Rate')
+
+            var grosspay = Number(hourlypay) * Number(hoursworked)
+            var uncleSamsShare = Number(grosspay) * Number(taxrate)
+            var netPay = Number(grosspay) - Number(uncleSamsShare)
+
+           
+
+
+        document.querySelector('span').innerHTML = `Gross Pay: $${grosspay.toFixed(2)} <br> Net Pay: $${netPay.toFixed(2)} <br> Uncle Sams Share: $${uncleSamsShare.toFixed(2)}`
+
+
+        console.log(`
+        Gross Pay: $${grosspay}
+        Net Pay: $${netPay}
+        Uncle Sams Share: $${uncleSamsShare}`)
+        }
+
+    </script>
+
+
+</body>
+
+</html>
